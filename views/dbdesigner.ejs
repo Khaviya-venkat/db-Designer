@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>db Designer</title>
+	<!-- <link rel="stylesheet" type="text/css" href="dbdesigner.css"> -->
+</head>
+<body>
+	
+	<button id="addtable">
+		Add a Table
+	</button>
+
+	<a href="/dbdesigner">
+	<button>
+		Display all tables
+	</button>
+	</a>
+	<table>
+		
+	</table>
+	
+
+<script>
+	var addTable = document.querySelector("#addtable");
+	var table = document.createElement("table");
+	// var table = document.querySelector("table");
+	document.querySelector("body").appendChild(table);
+	
+	var tHead = document.createElement("thead");	
+	var hRow = document.createElement("tr");	
+	addTable.addEventListener("click", function(){
+		table.style.width = "25%";
+		table.style.border = "1";
+		var head = document.createElement("tr");
+		var addbutton = document.createElement("tr");
+		var addfield = document.createElement("button");	
+		addfield.setAttribute("id", "addfields");		
+		head.innerHTML = "Untitled";
+		addfield.innerHTML = "Add Fields";
+		addbutton.appendChild(addfield);
+		hRow.appendChild(head);
+		tHead.appendChild(hRow);
+		tHead.appendChild(addbutton);
+		table.appendChild(tHead);
+		addTable.style.display = "none";
+		
+		// var addf = document.querySelector("#addfields");
+		addfield.addEventListener("click", function(){
+			var form = document.createElement("form");
+			var tablename = document.createElement("input");
+			var tablelabel = document.createElement("label");
+			
+			var datatype = document.createElement("input");
+			var datalabel = document.createElement("label");
+			
+			var constraint = document.createElement("input");
+			var constraintlabel = document.createElement("label");
+			
+			var attname = document.createElement("input");
+			var attlabel = document.createElement("label");
+			var radiolabel1 = document.createElement("label");
+			var radiolabel2 = document.createElement("label");
+			var submitbutton = document.createElement("button");
+			
+			tablename.type = "text";
+			tablename.name = "tablename";
+			tablelabel.innerHTML = "Table name: ";
+			
+			datatype.type = "text";
+			datatype.name = "datatype";
+			datalabel.innerHTML = "Datatype: ";
+			
+			constraint.type = "text";
+			constraint.name = "constraint";
+			constraintlabel.innerHTML = "Constraint: ";			
+			
+			form.name = "addatt";
+			form.action = "/dbdesigner";
+			form.method = "POST";
+			attname.type = "text";
+			attname.name = "myInput";		
+			attlabel.innerHTML = "Name: ";
+			submitbutton.innerHTML = "Add";
+			form.appendChild(attlabel);
+			form.appendChild(attname);
+			form.appendChild(tablelabel);
+			form.appendChild(tablename);
+			
+			form.appendChild(constraintlabel);
+			form.appendChild(constraint);			
+			
+			form.appendChild(datalabel);
+			form.appendChild(datatype);
+			
+			form.appendChild(submitbutton);
+			document.body.appendChild(form);
+			addfield.style.display = "none";
+			// submitbutton.addEventListener("click", function(){
+			// 	document.form.submit();
+			// });
+			// function submit(){
+				
+			// }
+	});
+	});
+	
+		 //  <p id="radiobuttons">
+		 // <input type="radio" class="radio" name="loginas" value="user">
+		 //  <label class="label" for="user">User</label><br>
+		 //  <input type="radio" class="radio" name="loginas" value="deliveryservice">
+		 //  <label class="label" for="deliveryservice">Delivery Service</label><br> 
+		 // </p>
+
+// 	my_form=document.createElement('FORM');
+// my_form.name='myForm';
+// my_form.method='POST';
+// my_form.action='http://www.another_page.com/index.htm';
+// my_tb=document.createElement('INPUT');
+// my_tb.type='TEXT';
+// my_tb.name='myInput';
+// my_tb.value='Values of my Input';
+// my_tb.appendChild(my_form);
+// document.body.add(my_form,document.body.elements[0]);
+// document.my_form.submit();
+			// 	// CREATE TABLE HEAD .
+			// var tHead = document.createElement("thead");	
+				
+			
+			// // CREATE ROW FOR TABLE HEAD .
+			// var hRow = document.createElement("tr");
+			
+			// // ADD COLUMN HEADER TO ROW OF TABLE HEAD.
+			// for (var i = 0; i < col.length; i++) {
+			// 		var th = document.createElement("th");
+			// 		th.innerHTML = col[i];
+			// 		hRow.appendChild(th);
+			// }
+			// tHead.appendChild(hRow);
+			// table.appendChild(tHead);	
+
+</script>
+</body>
+</html>
